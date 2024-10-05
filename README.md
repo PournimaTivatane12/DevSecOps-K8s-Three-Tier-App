@@ -1,4 +1,5 @@
 # DevSecOps-K8s-Three-Tier-App
 
 
-https://blog.stackademic.com/advanced-end-to-end-devsecops-kubernetes-three-tier-project-using-aws-eks-argocd-prometheus-fbbfdb956d1a
+![image](https://github.com/user-attachments/assets/66ddf5d0-1267-42b1-bad5-4334ea234d97)
+
