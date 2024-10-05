@@ -5,14 +5,12 @@ How to Contribute
 Fork the Repository
 Create your own fork of the repository by clicking the "Fork" button at the top of the repo page. Clone your fork locally using:
 
-bash
-Copy code
-git clone https://github.com/your-username/DevSecOps-K8s-Three-Tier-App.git
+
+git clone https:https://github.com/PournimaTivatane12/DevSecOps-K8s-Three-Tier-App
 Create a Branch
 Create a new branch for your feature or bug fix:
 
-bash
-Copy code
+
 git checkout -b feature/your-feature-name
 Make Your Changes
 Implement your feature or fix in the branch. Ensure that:
@@ -23,21 +21,17 @@ Application logic for the three-tier setup (frontend, backend, database) is opti
 Run Tests
 Before submitting your changes, make sure to run all tests and validate the security configurations:
 
-bash
-Copy code
+
 # Example test commands for your app:
 kubectl apply -f <manifests> --dry-run=client
 Commit Your Changes
-Write a clear and concise commit message:
+Write a clear and concise commit message
 
-bash
-Copy code
 git commit -m "Add/Update/Fix <brief description of changes>"
 Push to Your Fork
 Push your changes to your forked repository:
 
-bash
-Copy code
+
 git push origin feature/your-feature-name
 Submit a Pull Request
 Go to the original repository and submit a pull request (PR) from your feature branch. Please ensure your PR includes:
