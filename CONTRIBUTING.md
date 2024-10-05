@@ -1,4 +1,5 @@
 Contributing to DevSecOps-K8s-Three-Tier-App
+
 We welcome contributions to this project! To maintain high standards and ensure smooth collaboration, please follow the guidelines below.
 
 How to Contribute
