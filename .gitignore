@@ -1,0 +1,60 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Environment files
+.env
+.env.*
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# Kubernetes
+.kube/
+.k8s/
+
+# Ignore terraform state files
+*.tfstate
+*.tfstate.*
+
+# macOS
+.DS_Store
+
+# Linux
+*.swp
+*.swo
+*~
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor directories and files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Backup files
+*.bak
+*.tmp
+
+# Exclude any generated manifests or secrets
+secrets.yaml
+kubeconfig.yaml
