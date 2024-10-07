@@ -1,0 +1,9 @@
+ Terraform
+
+Version: 1.0 or later
+
+Installation Guide: Terraform Installation
+
+Verify Installation:
+
+terraform -v
