@@ -1,0 +1,13 @@
+Kubernetes
+
+Version: 1.18 or later
+Installation Guide: Kubernetes Installation
+
+Tools Needed:
+kubectl for interacting with your Kubernetes cluster.
+Minikube (or any Kubernetes cluster provider).
+
+Verify Installation:
+
+
+kubectl version --client
