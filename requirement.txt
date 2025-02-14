@@ -1,0 +1,37 @@
+# Web Frameworks
+Flask==2.2.5  # Lightweight Python web framework
+Django==4.2.5  # If using Django instead of Flask
+
+# Database Dependencies
+SQLAlchemy==2.0.20  # ORM for database interaction
+psycopg2==2.9.7  # PostgreSQL adapter for Python
+mysql-connector-python==8.1.0  # MySQL adapter
+
+# Security Libraries
+bandit==1.7.5  # Security linter for Python
+pyjwt==2.8.0  # JWT authentication for API security
+cryptography==41.0.3  # Encryption and security utilities
+
+# Kubernetes and DevOps Tools
+kubernetes==27.2.0  # Kubernetes Python client
+boto3==1.28.40  # AWS SDK for Python (if using AWS)
+docker==6.1.3  # Docker SDK for Python
+pyyaml==6.0.1  # YAML file handling (e.g., for Kubernetes manifests)
+
+# Testing and Monitoring
+pytest==7.4.2  # Testing framework
+locust==2.15.1  # Load testing
+prometheus_client==0.17.1  # Expose Prometheus metrics
+requests==2.31.0  # API requests for testing
+
+# Logging and Observability
+loguru==0.7.0  # Advanced logging
+opentelemetry-sdk==1.19.0  # Observability (Tracing, Metrics)
+opentelemetry-instrumentation-flask==0.41b0  # Flask integration
+
+# Other Utilities
+gunicorn==21.2.0  # WSGI server for production
+celery==5.3.1  # Task queue (if needed)
+
+
+pip install -r requirements.txt
