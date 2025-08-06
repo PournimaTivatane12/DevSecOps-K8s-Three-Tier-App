@@ -1,7 +1,8 @@
 # DevSecOps-K8s-Three-Tier-App
 
+<img width="2793" height="1411" alt="diagram-export-8-6-2025-9_53_38-PM" src="https://github.com/user-attachments/assets/792b66f0-2a5b-43ae-a4f0-56bcb9fb4756" />
 
-![image](https://github.com/user-attachments/assets/66ddf5d0-1267-42b1-bad5-4334ea234d97)
+
 
 # Project Overview
 This project integrates DevSecOps principles into a three-tier web application running on Kubernetes (K8s), ensuring security, automation, and scalability.
