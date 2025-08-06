@@ -1,77 +1,139 @@
-# DevSecOps-K8s-Three-Tier-App
+# 🚀 3-Tier Web Application Deployment on AWS EKS (Production-Grade)
 
+**This architecture represents a production-grade 3-tier web app deployed on AWS EKS using Terraform, Jenkins, ArgoCD, Vault, Prometheus, Grafana, and Let’s Encrypt for HTTPS. It follows GitOps practices, is fully observable, and supports resilient, secure deployments.**
+
+## 🗺️ Architecture Overview
 <img width="2793" height="1411" alt="diagram-export-8-6-2025-9_53_38-PM" src="https://github.com/user-attachments/assets/792b66f0-2a5b-43ae-a4f0-56bcb9fb4756" />
 
 
+**A complete, production-ready 3-tier web application deployment on Amazon EKS, built with:**
 
-# Project Overview
-This project integrates DevSecOps principles into a three-tier web application running on Kubernetes (K8s), ensuring security, automation, and scalability.
+✅ Infrastructure as Code
+✅ CI/CD Pipelines
+✅ GitOps with Canary Deployments
+✅ Secrets Management
+✅ HTTPS + DNS
+✅ Observability + Resilience
+✅ Real-World Cloud Hosting
 
+# 📌 Project Highlights
 
-🔹 Three-Tier Architecture
-1️⃣ Frontend → React/Angular/Vue (Static Web App)
-2️⃣ Backend → Node.js/Flask/Django (API Services)
-3️⃣ Database → PostgreSQL/MySQL/MongoDB (Persistent Storage)
-
-🛠️ Tech Stack
-Infrastructure → Kubernetes, Helm, Terraform
-Security → Trivy, Falco, OPA/Gatekeeper
-CI/CD → GitHub Actions, ArgoCD, Jenkins
-Monitoring → Prometheus, Grafana, OpenTelemetry
-Networking → Istio (Service Mesh), Nginx Ingress
-⚙️ Features
-✔ Automated CI/CD Pipeline → Secure & seamless deployment
-✔ Container Security Scanning → Scan images with Trivy
-✔ Runtime Security Monitoring → Detect anomalies using Falco
-✔ Infrastructure as Code (IaC) → Terraform for infrastructure provisioning
-✔ Zero Trust Networking → Secure communication with Istio
-
-🚀 Deployment Guide
-
-🔹 Prerequisites
-Kubernetes Cluster (Minikube, EKS, GKE, AKS)
-Helm, Kubectl installed
-Docker & Terraform for infrastructure
-
-🔹 Steps to Deploy
-
-1️⃣ Clone Repository
-
-git clone https://github.com/PournimaTivatane12/DevSecOps-K8s-Three-Tier-App.git
- DevSecOps-K8s-Three-Tier-App
-
-2️⃣ Build & Push Docker Images
+| Capability                     | Tools/Services Used                               |
+| ------------------------------ | ------------------------------------------------- |
+| **Infrastructure as Code**     | Terraform                                         |
+| **Kubernetes Platform**        | Amazon EKS (Elastic Kubernetes Service)           |
+| **CI/CD Pipelines**            | Jenkins (CI), ArgoCD (CD), Argo Rollouts (Canary) |
+| **GitOps Workflow**            | ArgoCD, GitHub                                    |
+| **Monitoring & Observability** | Prometheus, Grafana, OpenTelemetry, Jaeger        |
+| **Secrets Management**         | AWS Secrets Manager, HashiCorp Vault              |
+| **Security**                   | IAM Roles for Service Accounts, Security Groups   |
+| **Resilience Testing**         | LitmusChaos (Chaos Engineering)                   |
+| **Autoscaling**                | Kubernetes HPA (Horizontal Pod Autoscaler)        |
+| **Ingress & Routing**          | NGINX / ALB Ingress Controller, Route 53          |
+| **HTTPS & TLS**                | Let’s Encrypt + Cert-Manager                      |
+| **DNS Setup**                  | Custom domain: `yourapp.dev`                      |
 
 
-docker build -t my-app-frontend ./frontend
-docker build -t my-app-backend ./backend
-docker push my-app-frontend:latest
-docker push my-app-backend:latest
+# Infrastructure Stack 
 
-3️⃣ Deploy to Kubernetes
+Terraform: Automates provisioning of:
 
+VPC (with public/private subnets)
 
-kubectl apply -f k8s/
-4️⃣ Verify Deployment
+NAT Gateway, Internet Gateway
 
-kubectl get pods -n my-app
-📊 Monitoring & Security
-Run Security Scans
+EKS Cluster
 
-trivy image my-app-backend:latest
-Check Kubernetes Runtime Security
+IAM Roles & Policies
 
-falco --rules-file /etc/falco/rules.yaml
-View Metrics in Grafana
+Security Groups
 
-kubectl port-forward svc/grafana 3000:3000
+# ⚙️ CI/CD Pipeline Flow
 
-📜 Contributing
+GitHub ➜ Jenkins ➜ Docker Image Build ➜ ArgoCD ➜ Canary Deploy via Argo Rollouts ➜ EKS
+
+Code Push triggers Jenkins CI
+
+Jenkins builds and pushes Docker images
+
+ArgoCD watches Git and deploys updated manifests
+
+Argo Rollouts enables controlled, canary deployments
+
+# 🔐 Security & Secrets
+
+Secrets Management via:
+
+AWS Secrets Manager (native AWS secrets)
+
+HashiCorp Vault (external secrets integration)
+
+IAM Roles for Service Accounts (IRSA) for pod access
+
+TLS certificates provisioned via Let’s Encrypt + cert-manager
+
+# 📈 Observability & Monitoring
+
+Prometheus: Metric scraping and alerts
+
+Grafana: Custom dashboards
+
+OpenTelemetry & Jaeger: Tracing
+
+HPA: Autoscaling pods based on CPU metrics
+
+# ☠️ Chaos Engineering
+LitmusChaos: Injects controlled faults (e.g., pod delete, resource stress)
+
+Ensures application resilience and recovery
+
+# 🌐 DNS + HTTPS
+cert-manager issues free TLS certificates from Let’s Encrypt
+
+Route 53 for domain routing (e.g., https://yourapp.dev)
+
+Users access the app securely via HTTPS
+
+# ✅ Project Checklist
+
+| Feature                             | Status      |
+| ----------------------------------- | ----------- |
+| Terraform-based Infra               | ✅ Completed |
+| Jenkins CI Setup                    | ✅ Completed |
+| ArgoCD GitOps                       | ✅ Completed |
+| Argo Rollouts + Canary              | ✅ Completed |
+| Kubernetes HPA                      | ✅ Completed |
+| Vault / Secrets Manager Integration | ✅ Completed |
+| cert-manager + Let’s Encrypt        | ✅ Completed |
+| Route 53 DNS + HTTPS                | ✅ Completed |
+| Prometheus + Grafana Dashboards     | ✅ Completed |
+| LitmusChaos Fault Injection         | ✅ Completed |
+| Custom Domain with SSL              | ✅ Completed |
+
+# 📹 YouTube Demo
+
+# 📁 Project Structure
+
+.
+├── terraform/              # Infra provisioning (VPC, EKS, IAM)
+├── manifests/              # Kubernetes YAMLs (frontend, backend, DB)
+├── charts/                 # Helm charts (if used)
+├── jenkins/                # Jenkinsfile, pipeline configs
+├── argocd/                 # ArgoCD app manifests
+├── secrets/                # Vault + AWS Secrets Manager templates
+├── monitoring/             # Prometheus, Grafana configs
+└── README.md
+
+# 🤝 Contributing
+
+Contributions, suggestions, and feedback are welcome. Feel free to fork this repo, submit issues, or raise pull requests!
+
+**📜 Contributing**
 Want to contribute? Follow the contribution guidelines. PRs are welcome!
 
-📄 License
+**📄 License**
 This project is licensed under MIT License. See the LICENSE file for details.
 
-📬 Contact
-For questions or discussions, open an Issue or connect via LinkedIn.
+**📬 Contact**
+*For questions or discussions, open an Issue or connect via LinkedIn.*
 
