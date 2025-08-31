@@ -114,14 +114,21 @@ Users access the app securely via HTTPS
 
 # 📁 Project Structure
 
-.
+
 ├── terraform/              # Infra provisioning (VPC, EKS, IAM)
+
 ├── manifests/              # Kubernetes YAMLs (frontend, backend, DB)
+
 ├── charts/                 # Helm charts (if used)
+
 ├── jenkins/                # Jenkinsfile, pipeline configs
+
 ├── argocd/                 # ArgoCD app manifests
+
 ├── secrets/                # Vault + AWS Secrets Manager templates
+
 ├── monitoring/             # Prometheus, Grafana configs
+
 └── README.md
 
 # 🤝 Contributing
